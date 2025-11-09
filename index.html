@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Campus Navigator</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Page 1: Login Page -->
+    <div id="loginPage" class="page active">
+        <div class="container">
+            <div class="login-box">
+                <div class="logo">🎓</div>
+                <h1>Smart Campus Navigator</h1>
+                <p class="subtitle">Navigate your campus with intelligent pathfinding</p>
+                <form id="loginForm">
+                    <div class="form-group">
+                        <label for="username">Username</label>
+                        <input type="text" id="username" placeholder="Enter your username" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input type="password" id="password" placeholder="Enter your password" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Login</button>
+                    <div class="auth-links">
+                        <a href="#" onclick="showRegisterPage(event)" class="auth-link">Don't have an account? Register</a>
+                        <a href="#" onclick="showForgotPasswordPage(event)" class="auth-link">Forgot Password?</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Page 1.5: Register Page -->
+    <div id="registerPage" class="page">
+        <div class="container">
+            <div class="login-box">
+                <div class="logo">📝</div>
+                <h1>Create Account</h1>
+                <p class="subtitle">Join Smart Campus Navigator</p>
+                <form id="registerForm">
+                    <div class="form-group">
+                        <label for="regFullName">Full Name</label>
+                        <input type="text" id="regFullName" placeholder="Enter your full name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="regUsername">Username</label>
+                        <input type="text" id="regUsername" placeholder="Choose a username" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="regEmail">Email</label>
+                        <input type="email" id="regEmail" placeholder="Enter your email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="regPassword">Password</label>
+                        <input type="password" id="regPassword" placeholder="Choose a password" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="regConfirmPassword">Confirm Password</label>
+                        <input type="password" id="regConfirmPassword" placeholder="Confirm your password" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="regUserType">User Type</label>
+                        <select id="regUserType" required>
+                            <option value="student">Student</option>
+                            <option value="faculty">Faculty</option>
+                            <option value="visitor">Visitor</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Register</button>
+                    <div class="auth-links">
+                        <a href="#" onclick="showLoginPage(event)" class="auth-link">Already have an account? Login</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Page 1.6: Forgot Password Page -->
+    <div id="forgotPasswordPage" class="page">
+        <div class="container">
+            <div class="login-box">
+                <div class="logo">🔐</div>
+                <h1>Reset Password</h1>
+                <p class="subtitle">Enter your username and email to reset password</p>
+                <form id="forgotPasswordForm">
+                    <div class="form-group">
+                        <label for="forgotUsername">Username</label>
+                        <input type="text" id="forgotUsername" placeholder="Enter your username" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="forgotEmail">Email</label>
+                        <input type="email" id="forgotEmail" placeholder="Enter your email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="newPassword">New Password</label>
+                        <input type="password" id="newPassword" placeholder="Enter new password" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="confirmNewPassword">Confirm New Password</label>
+                        <input type="password" id="confirmNewPassword" placeholder="Confirm new password" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Reset Password</button>
+                    <div class="auth-links">
+                        <a href="#" onclick="showLoginPage(event)" class="auth-link">Back to Login</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Page 2: Campus Images Gallery -->
+    <div id="galleryPage" class="page">
+        <nav class="navbar">
+            <div class="nav-brand">
+                <span class="logo-small">🎓</span>
+                <h2>Campus Gallery</h2>
+            </div>
+            <div class="nav-actions">
+                <span class="user-welcome">Welcome, <span id="userDisplay"></span>!</span>
+                <button class="btn btn-secondary" onclick="navigateToPage('navigationPage')">Navigate Campus →</button>
+            </div>
+        </nav>
+        
+        <div class="container">
+            <div class="page-header">
+                <h2>Explore Our Campus</h2>
+                <p>Browse through the beautiful locations on our campus</p>
+            </div>
+            
+            <div class="gallery" id="imageGallery">
+                <!-- Gallery Item 1: Main Gate -->
+                <div class="gallery-item" data-location="1">
+                    <div class="image-container">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRFmmWRQGshSRuZWyZNVipAxCtRrrBpPnO7LA&s" alt="Main Gate">
+                    </div>
+                    <div class="image-caption">
+                        <h3>Main Gate</h3>
+                        <p class="location-type">Entrance</p>
+                        <p class="location-description">The grand entrance to our campus, welcoming students and visitors.</p>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 2: Admin Block -->
+                <div class="gallery-item" data-location="5">
+                    <div class="image-container">
+                        <img src="https://www.addressguru.in/images/1591699115.png" alt="Admin Block">
+                    </div>
+                    <div class="image-caption">
+                        <h3>Administration Block</h3>
+                        <p class="location-type">Administrative Building</p>
+                        <p class="location-description">Central administrative offices and meeting rooms.</p>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 3: B Block -->
+                <div class="gallery-item" data-location="8">
+                    <div class="image-container">
+                        <img src="https://image-static.collegedunia.com/public/college_data/images/appImage/57212_cover2.jpg" alt="Hostel">
+                    </div>
+                    <div class="image-caption">
+                        <h3>B Block </h3>
+                        <p class="location-type">Accommodation</p>
+                        <p class="location-description">Comfortable student accommodation with modern amenities.</p>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 4: C, D and E block -->
+                <div class="gallery-item" data-location="2">
+                    <div class="image-container">
+                        <img src="https://d.gehu.ac.in/uploads/image/bhimtal-gallery-5-300x225.webp" alt="Library">
+                    </div>
+                    <div class="image-caption">
+                        <h3>C, D and E Block</h3>
+                        <p class="location-type">Academic Building</p>
+                        <p class="location-description">State-of-the-art library with vast collection of books and digital resources.</p>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 5: Library -->
+                <div class="gallery-item" data-location="2">
+                    <div class="image-container">
+                        <img src="https://images.shiksha.com/mediadata/images/1689075683phpwmRg1B.jpeg" alt="Library">
+                    </div>
+                    <div class="image-caption">
+                        <h3>Library</h3>
+                        <p class="location-type">Academic Building</p>
+                        <p class="location-description">State-of-the-art library with vast collection of books and digital resources.</p>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 6: Cafeteria -->
+                <div class="gallery-item" data-location="3">
+                    <div class="image-container">
+                        <div class="placeholder-image">
+                            <span class="placeholder-icon">🍽️</span>
+                            <p class="placeholder-text">Add Cafeteria Image</p>
+                        </div>
+                    </div>
+                    <div class="image-caption">
+                        <h3>Student Cafeteria</h3>
+                        <p class="location-type">Dining Facility</p>
+                        <p class="location-description">Spacious cafeteria serving delicious and nutritious meals.</p>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 7: Computer Lab -->
+                <div class="gallery-item" data-location="4">
+                    <div class="image-container">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSGRnZuf7YjrN7UG3U9r02h6kb7hR-CNS0QFg&s" alt="Computer Lab">
+                    </div>
+                    <div class="image-caption">
+                        <h3>Computer Science Lab</h3>
+                        <p class="location-type">Academic Building</p>
+                        <p class="location-description">Advanced computing facilities with latest hardware and software.</p>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 8: Sports Complex -->
+                <div class="gallery-item" data-location="6">
+                    <div class="image-container">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRjuhZ3iIA85YaCu347wKOAtvkmCalDDI3wjw&s" alt="Sports Complex">
+                    </div>
+                    <div class="image-caption">
+                        <h3>Volley Ball ground</h3>
+                        <p class="location-type">Sports Facility</p>
+                        <p class="location-description">Indoor and outdoor sports facilities for various activities.</p>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 9: Auditorium -->
+                <div class="gallery-item" data-location="7">
+                    <div class="image-container">
+                        <img src="https://gehu.ac.in/blog/public/upload/seo/20250711103143.webp" alt="Auditorium">
+                    </div>
+                    <div class="image-caption">
+                        <h3>Open Air Theater</h3>
+                        <p class="location-type">OAT</p>
+                        <p class="location-description">Large auditorium for events and performances.</p>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 10: Hostel -->
+                <div class="gallery-item" data-location="8">
+                    <div class="image-container">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRjuhZ3iIA85YaCu347wKOAtvkmCalDDI3wjw&s" alt="Hostel">
+                    </div>
+                    <div class="image-caption">
+                        <h3>Hostel Block A</h3>
+                        <p class="location-type">Accommodation</p>
+                        <p class="location-description">Comfortable student accommodation with modern amenities.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Page 3: Navigation Input Page -->
+    <div id="navigationPage" class="page">
+        <nav class="navbar">
+            <div class="nav-brand">
+                <button class="btn btn-icon" onclick="navigateToPage('galleryPage')">← Back</button>
+                <h2>Plan Your Route</h2>
+            </div>
+            <div class="nav-actions">
+                <button class="btn btn-secondary" onclick="logout()">Logout</button>
+            </div>
+        </nav>
+        
+        <div class="container">
+            <div class="navigation-container">
+                <div class="nav-form-card">
+                    <div class="card-header">
+                        <h2> Find Your Path</h2>
+                        <p>Select your starting point and destination</p>
+                    </div>
+                    
+                    <form id="routeForm">
+                        <div class="form-group">
+                            <label for="startLocation">
+                                <span class="label-icon">📍</span>
+                                Current Location
+                            </label>
+                            <select id="startLocation" class="location-select" required>
+                                <option value="">-- Select Starting Point --</option>
+                                <option value="1">Main Gate</option>
+                                <option value="2">Central Library</option>
+                                <option value="3">Student Cafeteria</option>
+                                <option value="4">Computer Science Lab</option>
+                                <option value="5">Administration Block</option>
+                                <option value="6">Sports Complex</option>
+                                <option value="7">Main Auditorium</option>
+                                <option value="8">Hostel Block A</option>
+                            </select>
+                        </div>
+
+                        <div class="route-divider">
+                            <div class="divider-line"></div>
+                            <span class="divider-icon">➜</span>
+                            <div class="divider-line"></div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="endLocation">
+                                <span class="label-icon">🎯</span>
+                                Destination
+                            </label>
+                            <select id="endLocation" class="location-select" required>
+                                <option value="">-- Select Destination --</option>
+                                <option value="1">Main Gate</option>
+                                <option value="2">Central Library</option>
+                                <option value="3">Student Cafeteria</option>
+                                <option value="4">Computer Science Lab</option>
+                                <option value="5">Administration Block</option>
+                                <option value="6">Sports Complex</option>
+                                <option value="7">Main Auditorium</option>
+                                <option value="8">Hostel Block A</option>
+                            </select>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary btn-large">
+                            <span>Find Routes</span>
+                        </button>
+                    </form>
+
+                    <div class="info-box">
+                        <p>Our smart navigator uses <strong>Dijkstra's Algorithm</strong> to find the shortest path between locations!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Page 3.5: Path Visualization Page (NEW) -->
+    <div id="pathVisualizationPage" class="page">
+        <nav class="navbar">
+            <div class="nav-brand">
+                <button class="btn btn-icon" onclick="navigateToPage('navigationPage')">← Back</button>
+                <h2>Available Routes</h2>
+            </div>
+            <div class="nav-actions">
+                <button class="btn btn-secondary" onclick="logout()">Logout</button>
+            </div>
+        </nav>
+        
+        <div class="container">
+            <!-- Route Summary -->
+            <div class="route-summary-card">
+                <h2> Route Analysis</h2>
+                <div class="route-overview">
+                    <div class="route-endpoints">
+                        <div class="endpoint">
+                            <span class="endpoint-icon">📍</span>
+                            <div>
+                                <div class="endpoint-label">Starting Point</div>
+                                <div class="endpoint-name" id="startPointName">-</div>
+                            </div>
+                        </div>
+                        <div class="route-arrow">→</div>
+                        <div class="endpoint">
+                            <span class="endpoint-icon">🎯</span>
+                            <div>
+                                <div class="endpoint-label">Destination</div>
+                                <div class="endpoint-name" id="endPointName">-</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- All Paths Display -->
+            <div class="all-paths-container">
+                <h2> Available Paths (Shortest to Longest)</h2>
+                <div id="allPathsList" class="paths-list">
+                    <!-- Paths will be dynamically generated here -->
+                </div>
+            </div>
+
+            <!-- Action Buttons -->
+            <div class="path-actions">
+                <button class="btn btn-primary btn-large" onclick="openGoogleMaps()">
+                    <span> Open in Google Maps</span>
+                </button>
+                <button class="btn btn-secondary btn-large" onclick="navigateToPage('routePage')">
+                    <span> View Detailed Directions</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Page 4: Route Display Page -->
+    <div id="routePage" class="page">
+        <nav class="navbar">
+            <div class="nav-brand">
+                <button class="btn btn-icon" onclick="navigateToPage('pathVisualizationPage')">← Back</button>
+                <h2>Your Route</h2>
+            </div>
+            <div class="nav-actions">
+                <button class="btn btn-secondary" onclick="logout()">Logout</button>
+            </div>
+        </nav>
+        
+        <div class="container">
+            <!-- Route Summary -->
+            <div class="route-summary-card">
+                <h2> Route Summary</h2>
+                <div class="summary-grid">
+                    <div class="summary-item">
+                        <div class="summary-icon">📏</div>
+                        <div class="summary-content">
+                            <span class="summary-label">Total Distance</span>
+                            <span class="summary-value" id="totalDistance">0 m</span>
+                        </div>
+                    </div>
+                    <div class="summary-item">
+                        <div class="summary-icon">⏱️</div>
+                        <div class="summary-content">
+                            <span class="summary-label">Estimated Time</span>
+                            <span class="summary-value" id="totalTime">0 min</span>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+
+            <!-- Step by Step Directions -->
+            <div class="route-directions-card">
+                <h2>Step-by-Step Directions</h2>
+                <div id="routeSteps" class="route-steps-container">
+                    <!-- Steps will be dynamically generated here -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Location Details Modal -->
+    <div id="locationModal" class="location-modal">
+        <div class="location-modal-content">
+            <div class="location-modal-header">
+                <h2 id="locationModalTitle">Location Details</h2>
+                <span class="location-modal-close" onclick="closeLocationModal()">&times;</span>
+            </div>
+            <div class="location-modal-body">
+                <!-- Add Class/Lab Form (Admin Only) -->
+                <div class="location-form-section" id="adminFormSection" style="display: none;">
+                    <h3>Add Class/Lab to This Location</h3>
+                    <form id="locationItemForm">
+                        <div class="form-group">
+                            <label for="className">Class/Lab Name</label>
+                            <input type="text" id="className" placeholder="e.g., Computer Lab 101, Classroom 204" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="classFloor">Floor</label>
+                            <input type="text" id="classFloor" placeholder="e.g., Ground Floor, 2nd Floor">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="classDescription">Description</label>
+                            <textarea id="classDescription" placeholder="Add details about this class/lab" rows="3"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Add to Location</button>
+                    </form>
+                </div>
+
+                <!-- List of Classes/Labs -->
+                <div class="location-items-section">
+                    <h3>📋 Classes/Labs in This Location</h3>
+                    <div id="locationItemsList" class="location-items-list">
+                        <!-- Items will be dynamically added here -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
