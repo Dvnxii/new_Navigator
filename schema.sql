@@ -101,8 +101,10 @@ INSERT INTO paths (from_location_id, to_location_id, distance, estimated_time, i
 (3, 2, 120, 96, TRUE, FALSE),
 (2, 4, 180, 144, FALSE, FALSE),
 (4, 2, 180, 144, FALSE, FALSE),
+(2, 9, 160, 128, FALSE, FALSE),
+(9, 2, 160, 128, FALSE, FALSE),
 
--- From Cafeteria
+-- From Mess Area
 (3, 5, 90, 72, FALSE, FALSE),
 (5, 3, 90, 72, FALSE, FALSE),
 (3, 7, 110, 88, FALSE, FALSE),
@@ -118,10 +120,17 @@ INSERT INTO paths (from_location_id, to_location_id, distance, estimated_time, i
 (5, 7, 80, 64, TRUE, FALSE),
 (7, 5, 80, 64, TRUE, FALSE),
 
--- From Sports Complex
+-- From Volleyball Ground
 (6, 8, 150, 120, FALSE, FALSE),
-(8, 6, 150, 120, FALSE, FALSE);
+(8, 6, 150, 120, FALSE, FALSE),
 
+-- From Open Air Theater
+(7, 9, 130, 104, FALSE, FALSE),
+(9, 7, 130, 104, FALSE, FALSE),
+
+-- From B Block
+(8, 9, 85, 68, FALSE, FALSE),
+(9, 8, 85, 68, FALSE, FALSE);
 --  NAVIGATION HISTORY TABLE 
 CREATE TABLE navigation_history (
     history_id INT PRIMARY KEY AUTO_INCREMENT,
