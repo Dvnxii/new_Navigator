@@ -57,13 +57,14 @@ CREATE TABLE locations (
 -- Insert sample locations
 INSERT INTO locations (location_id, location_name, location_type, description, building_code, latitude, longitude, image_path) VALUES
 (1, 'Main Gate', 'gate', 'Main entrance to the campus with security checkpoint', 'MG', 29.375481, 79.530486, 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRFmmWRQGshSRuZWyZNVipAxCtRrrBpPnO7LA&s'),
-(2, 'Central Library', 'building', 'Three-story library with extensive book collection and study areas', 'LIB', 29.375620, 79.530850, 'https://images.shiksha.com/mediadata/images/1689075683phpwmRg1B.jpeg'),
-(3, 'Student Cafeteria', 'facility', 'Large cafeteria serving breakfast, lunch, and dinner', 'CAF', 29.375350, 79.530920, NULL),
-(4, 'Computer Science Lab', 'building', 'Advanced computer lab with 100+ workstations', 'CSL', 29.375780, 79.530650, 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSGRnZuf7YjrN7UG3U9r02h6kb7hR-CNS0QFg&s'),
+(2, 'Library', 'building', 'Three-story library with extensive book collection and study areas', 'LIB', 29.375620, 79.530850, 'https://images.shiksha.com/mediadata/images/1689075683phpwmRg1B.jpeg'),
+(3, 'Mess Area', 'facility', 'Large cafeteria serving breakfast, lunch, and dinner', 'MESS', 29.375350, 79.530920, NULL),
+(4, 'Computer Lab', 'building', 'Advanced computer lab with 100+ workstations', 'CSL', 29.375780, 79.530650, 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSGRnZuf7YjrN7UG3U9r02h6kb7hR-CNS0QFg&s'),
 (5, 'Administration Block', 'building', 'Main administrative offices including registrar and finance', 'ADM', 29.375280, 79.530680, 'https://www.addressguru.in/images/1591699115.png'),
-(6, 'Sports Complex', 'facility', 'Indoor sports facility with gym, basketball, and badminton courts', 'SPT', 29.375920, 79.530980, 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRjuhZ3iIA85YaCu347wKOAtvkmCalDDI3wjw&s'),
-(7, 'Main Auditorium', 'building', 'Large auditorium with 500 seating capacity', 'AUD', 29.375150, 79.530950, 'https://gehu.ac.in/blog/public/upload/seo/20250711103143.webp'),
-(8, 'Hostel Block A', 'building', 'Student accommodation with 200 rooms', 'HST', 29.375850, 79.531250, NULL);
+(6, 'Volleyball Ground', 'facility', 'Outdoor sports facility for volleyball', 'VBG', 29.375920, 79.530980, 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRjuhZ3iIA85YaCu347wKOAtvkmCalDDI3wjw&s'),
+(7, 'Open Air Theater', 'building', 'Large outdoor auditorium for events and performances', 'OAT', 29.375150, 79.530950, 'https://gehu.ac.in/blog/public/upload/seo/20250711103143.webp'),
+(8, 'B Block', 'building', 'Academic building with classrooms and labs', 'BB', 29.375850, 79.531250, 'https://image-static.collegedunia.com/public/college_data/images/appImage/57212_cover2.jpg'),
+(9, 'C D and E Block', 'building', 'Multi-purpose academic buildings', 'CDE', 29.375950, 79.531350, 'https://d.gehu.ac.in/uploads/image/bhimtal-gallery-5-300x225.webp');
 
 --  PATHS TABLE 
 CREATE TABLE paths (
