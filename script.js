@@ -143,13 +143,14 @@ const campusGraph = new Graph();
 // Campus Locations Data
 const campusLocations = {
     1: { name: 'Main Gate', type: 'Entrance' },
-    2: { name: 'Central Library', type: 'Academic Building' },
-    3: { name: 'Student Cafeteria', type: 'Dining Facility' },
-    4: { name: 'Computer Science Lab', type: 'Academic Building' },
+    2: { name: 'Library', type: 'Academic Building' },
+    3: { name: 'Mess Area', type: 'Dining Facility' },
+    4: { name: 'Computer Lab', type: 'Academic Building' },
     5: { name: 'Administration Block', type: 'Administrative Building' },
-    6: { name: 'Sports Complex', type: 'Sports Facility' },
-    7: { name: 'Main Auditorium', type: 'Event Hall' },
-    8: { name: 'Hostel Block A', type: 'Accommodation' }
+    6: { name: 'Volleyball Ground', type: 'Sports Facility' },
+    7: { name: 'Open Air Theater', type: 'Event Hall' },
+    8: { name: 'B Block', type: 'Academic Building' },
+    9: { name: 'C D and E Block', type: 'Academic Building' }
 };
 
 // Add vertices to graph
@@ -169,6 +170,9 @@ const campusPaths = [
     { from: '6', to: '8', distance: 150, time: 120 },
     { from: '3', to: '7', distance: 110, time: 88 },
     { from: '4', to: '5', distance: 95, time: 76 },
+    { from: '8', to: '9', distance: 85, time: 68 },
+    { from: '7', to: '9', distance: 130, time: 104 },
+    { from: '2', to: '9', distance: 160, time: 128 },
 ];
 
 const pathDetails = {};
@@ -186,13 +190,14 @@ campusPaths.forEach(path => {
 // Location coordinates
 const locationCoordinates = {
     '1': { name: 'Main Gate', lat: 29.375481, lng: 79.530486 },
-    '2': { name: 'Central Library', lat: 29.375620, lng: 79.530850 },
-    '3': { name: 'Student Cafeteria', lat: 29.375350, lng: 79.530920 },
-    '4': { name: 'Computer Science Lab', lat: 29.375780, lng: 79.530650 },
+    '2': { name: 'Library', lat: 29.375620, lng: 79.530850 },
+    '3': { name: 'Mess Area', lat: 29.375350, lng: 79.530920 },
+    '4': { name: 'Computer Lab', lat: 29.375780, lng: 79.530650 },
     '5': { name: 'Administration Block', lat: 29.375280, lng: 79.530680 },
-    '6': { name: 'Sports Complex', lat: 29.375920, lng: 79.530980 },
-    '7': { name: 'Main Auditorium', lat: 29.375150, lng: 79.530950 },
-    '8': { name: 'Hostel Block A', lat: 29.375850, lng: 79.531250 }
+    '6': { name: 'Volleyball Ground', lat: 29.375920, lng: 79.530980 },
+    '7': { name: 'Open Air Theater', lat: 29.375150, lng: 79.530950 },
+    '8': { name: 'B Block', lat: 29.375850, lng: 79.531250 },
+    '9': { name: 'C D and E Block', lat: 29.375950, lng: 79.531350 }
 };
 
 // Default users
